@@ -1,0 +1,25 @@
+<html>
+<script>
+	if ("geolocation" in navigator) {
+	  /* geolocation is available */
+	  alert("YES");
+	} else {
+	  /* geolocation IS NOT available */
+	  alert("NO");
+	}
+	
+	function position_success(position) {
+		var latitude  = position.coords.latitude;
+		var longitude = position.coords.longitude;
+
+		alert(latitude + ";" + longitude);
+	}
+	
+	function position_error() {
+		alert("Position error");
+	}
+	
+	navigator.geolocation.getCurrentPosition(position_success, position_error);;
+
+</script>
+</html>
